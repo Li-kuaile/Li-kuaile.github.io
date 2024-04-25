@@ -1,0 +1,102 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-top: 120px;
+  background-color: #c9c9c9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  max-width:100%;
+  padding: 30px 10%;
+  gap: 10px;
+}
+
+.text h2 {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.text p {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  gap: 26px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+}
+
+.link a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+.link span {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1.5px; 
+  
+}
+.qrcode{
+  display: none;
+  width: 250px;
+  position:absolute;
+  bottom:50px;
+  left:50px;
+  z-index:99999;
+}
+.link span:hover+.qrcode{
+  /* hover某元素改变其兄弟元素的样式 */
+  display: block;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text p{
+    padding-left: 20px;
+  }
+
+  .links {
+    align-items: center;
+  }
+  .text h2{
+    font-size: var(--font-size-large);
+  }
+  .text p{
+    /* font-size: var(--font-size-medium); */
+    display: none;
+  }
+  .link a{
+    font-size: var(--font-size-small);
+  }
+  .link span{
+    font-size: var(--font-size-small);
+  }
+}

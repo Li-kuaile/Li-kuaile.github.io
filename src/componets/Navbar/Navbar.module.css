@@ -1,0 +1,184 @@
+@import "../../vars.css";
+.navbar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    z-index: 2;
+    padding: 0 10%;
+
+}
+.fixedTop {
+    padding: 20px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.title{
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    color:var(--color-text);
+}
+.menu{
+    display: flex;
+}
+.menuitem{
+    display: flex;
+    gap:47px;
+    list-style: none;
+}
+.menuitem a{
+    font-size: 26px;
+    text-decoration: none;
+    color:var(--color-text);
+    padding: 4px 0;
+}
+.menuitem a:hover{
+    border-bottom: #0ab6fa solid 3px;
+}
+.menubtn{
+    display: none;
+    /* cursor: pointer; */
+}
+@media screen and (max-width:830px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .title{
+        padding-top: 10px;
+    }
+    .menu{
+        /* 显示的菜单高于其他内容 */
+        position: absolute;
+        right: 0;
+        margin-right: 5%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+    
+    .menubtn{
+        display: block;
+        cursor: pointer;
+    }
+    .menuitem{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        background: #add9f5ab;
+        border: 2px solid #c0e4fbad;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    .menuitem li{
+        width: 150px;
+        height: 50px;
+        padding-top: 10px;
+        text-align: center;
+    }
+    .menuitem a{
+        font-size: 20px;
+    }
+    .menuitem li:hover {
+        background-color: #e3f4fffd;
+      }
+    .menuOpen{
+        display: flex;
+    }
+
+    /* menu toggle */
+    .menubtn {
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+        margin-top: 13px;
+        display: block;
+        position: relative;
+    }
+    .menubtn span {
+        display: block;
+        background-color: #000;
+        width: 24px;
+        height: 3px;
+        margin-top: -1.5px;
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        bottom: auto;
+        left: auto;
+        -moz-transition: background 0.2s ease-in-out;
+        -o-transition: background 0.2s ease-in-out;
+        -webkit-transition: background 0.2s ease-in-out;
+        -ms-transition: background 0.2s ease-in-out;
+        transition: background 0.2s ease-in-out;
+    }
+    .menubtn span::before, .menubtn span::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+        position: absolute;
+        left: 0;
+        -moz-transition-duration: 0.2s, 0.2s;
+        -o-transition-duration: 0.2s, 0.2s;
+        -webkit-transition-duration: 0.2s, 0.2s;
+        -ms-transition-duration: 0.2s, 0.2s;
+        transition-duration: 0.2s, 0.2s;
+        -moz-transition-delay: 0.2s, 0s;
+        -o-transition-delay: 0.2s, 0s;
+        -webkit-transition-delay: 0.2s, 0s;
+        -ms-transition-delay: 0.2s, 0s;
+        transition-delay: 0.2s, 0s;
+    }
+    .menubtn span::before {
+        top: -8px;
+        -moz-transition-property: top, transform;
+        -o-transition-property: top, transform;
+        -webkit-transition-property: top, transform;
+        -ms-transition-property: top, transform;
+        transition-property: top, transform;
+    }
+    .menubtn span::after {
+        bottom: -8px;
+        -moz-transition-property: bottom, transform;
+        -o-transition-property: bottom, transform;
+        -webkit-transition-property: bottom, transform;
+        -ms-transition-property: bottom, transform;
+        transition-property: bottom, transform;
+    }
+    
+    /* is clicked */
+
+    .isclicked span {
+        background-color: rgba(255, 0, 119, 0);
+    }
+    .isclicked span::before, .isclicked span::after {
+        background-color: #000;
+        -moz-transition-delay: 0s, 0.2s;
+        -o-transition-delay: 0s, 0.2s;
+        -webkit-transition-delay: 0s, 0.2s;
+        -ms-transition-delay: 0s, 0.2s;
+        transition-delay: 0s, 0.2s;
+    }
+    .isclicked span::before {
+        top: 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    .isclicked span::after {
+        bottom: 0;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}

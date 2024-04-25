@@ -1,0 +1,39 @@
+[
+    {
+        "title": "HTML + CSS 基础",
+        "description": ""
+    },
+    {
+        "title": "JavaScript",
+        "description": ""
+    },
+
+    {
+        "title": "React",
+        "description": ""
+    },
+    {
+        "title": "CSS预处理器",
+        "description": ""
+    },
+    {
+        "title": "CSS框架",
+        "description": ""
+    },
+    {
+        "title": "数据可视化",
+        "description": ""
+    },
+    {
+        "title": "网络协议与安全",
+        "description": ""
+    },
+    {
+        "title": "浏览器工作原理",
+        "description": ""
+    },
+    {
+        "title": "Git",
+        "description": ""
+    }
+]

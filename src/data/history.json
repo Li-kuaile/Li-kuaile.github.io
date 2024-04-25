@@ -1,0 +1,17 @@
+[
+    {
+      "role": "算法实习生",
+      "startDate": "2023.6",
+      "endDate": "2023.8",
+      "experiences": ["定制大头像生成", "植物图片生成"],
+      "imageSrc": "history/intern.png"
+    },
+    {
+      "role": "算法实习生",
+      "startDate": "2023.3",
+      "endDate": "2023.5",
+      "experiences": ["调研AGI技术(SD, Midjourney)", "定制训练LoRA模型"],
+      "imageSrc": "history/intern.png"
+    }
+  ]
+  

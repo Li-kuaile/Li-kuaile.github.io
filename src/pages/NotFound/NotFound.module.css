@@ -1,0 +1,88 @@
+.container body {
+	margin:0;padding:0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  align-content: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.container div {
+  width: 100%;
+  text-align: center;
+}
+
+.number {
+  margin:100px 0 0 0;
+  background: #fff;
+  position: relative;
+  font: 900 30vmin 'Consolas';
+  letter-spacing: 5vmin;
+  text-shadow: 2px -1px 0 #000, 4px -2px 0 #0a0a0a, 6px -3px 0 #0f0f0f, 8px -4px 0 #141414, 10px -5px 0 #1a1a1a, 12px -6px 0 #1f1f1f, 14px -7px 0 #242424, 16px -8px 0 #292929;
+}
+.number::before {
+  background-color: #53c5fa;
+  background-image: radial-gradient(closest-side at 50% 50%, #ffc107 100%, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #99ff96 100%, rgba(0, 0, 0, 0));
+  background-repeat: repeat-x;
+  background-size: 40vmin 40vmin;
+  background-position: -100vmin 20vmin, 100vmin -25vmin;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  -webkit-animation: moving 10s linear infinite both;
+          animation: moving 10s linear infinite both;
+  display: block;
+  position: absolute;
+  content: "";
+}
+.dark {
+  margin:100px 0 0 0;
+  /* background: #fff; */
+  position: relative;
+  font: 900 30vmin 'Consolas';
+  letter-spacing: 5vmin;
+  text-shadow: 2px -1px 0 #000, 4px -2px 0 #0a0a0a, 6px -3px 0 #0f0f0f, 8px -4px 0 #141414, 10px -5px 0 #1a1a1a, 12px -6px 0 #1f1f1f, 14px -7px 0 #242424, 16px -8px 0 #292929;
+}
+@-webkit-keyframes moving {
+  to {
+    background-position: 100vmin 20vmin, -100vmin -25vmin;
+  }
+}
+@keyframes moving {
+  to {
+    background-position: 100vmin 20vmin, -100vmin -25vmin;
+  }
+}
+.text {
+  font: 400 3vmin "Courgette";
+}
+.text span {
+  font-size: 7vmin;
+  display: block;
+  padding: 15px;
+}
+
+.twinkle {
+  margin-top: 60px;
+   font-size: 3vmin;
+  height: 60px;
+  width: 150px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #0081bd;
+  color: #fff;
+  background: #0081bd;
+  transition: background-color .3s;
+}
+
+
+.twinkle:hover {
+  background-color: #0081bd;
+  background: #fff;
+  color: #0081bd;
+}
+
+
