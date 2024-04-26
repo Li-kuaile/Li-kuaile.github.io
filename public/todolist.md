@@ -15,6 +15,7 @@
 
 # js实现
 **1. html代码，构建骨架**
+
 {% raw %}
 ```xml
 <!DOCTYPE html>
@@ -40,9 +41,11 @@
 </body>
 </html>
 ```
-{% endraw %}
+<!-- {% endraw %} -->
+
 **2. css 样式**
-{% raw %}
+
+<!-- {% raw %} -->
 ```css
 *{
     margin: 0;
@@ -101,11 +104,13 @@
     margin: 0 10px;
 }
 ```
-{% endraw %}
+<!-- {% endraw %} -->
+
 **3. js代码**
 
 js写是真麻烦😡，我给一些步骤尽量复用了
-{% raw %}
+
+<!-- {% raw %} -->
 ```javascript
 let todoInputText = document.querySelector(".todoInputText");
 let todoInputButton = document.querySelector(".todoInputButton");
@@ -193,14 +198,16 @@ selectAll.addEventListener("click", function (event) {
 });
 
 ```
-{% endraw %}
+<!-- {% endraw %} -->
+
 # react实现
 
 react靠hook太方便了！！！❤  一下就实现了🙁
 话不多说，直接上代码
 
 **1. jsx代码**
-{% raw %}
+
+<!-- {% raw %} -->
 ```javascript
 import React, { useState } from 'react'
 export default function Viewproject() {
@@ -256,9 +263,11 @@ export default function Viewproject() {
 }
 
 ```
-{% endraw %}
+<!-- {% endraw %} -->
+
 **2. css代码**
-{% raw %}
+
+<!-- {% raw %} -->
 ```css
 .todoInput{
     display: flex;
@@ -309,4 +318,4 @@ export default function Viewproject() {
     margin: 0 10px;
 }
 ```
-{% endraw %}
+<!-- {% endraw %} -->
