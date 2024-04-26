@@ -6,7 +6,7 @@
 > 替换轮播图片资源，修改文件位置后可直接运行。为了方便三个文件都在一个目录下。
 
 ### 1. 首先搭建html结构
-{% raw %}
+
 ```xml
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +44,9 @@
 </body>
 </html>
 ```
-{% endraw %}
+
 ### 2. 然后是样式
-{% raw %}
+
 ```css
 * {
     margin: 0;
@@ -120,10 +120,10 @@ img {
 .dots li:first-child {
     background: #fff;
 }
-{% endraw %}
+
 ```
 ### 3. 最后是js文件
-{% raw %}
+
 ```javascript
 let dot = document.querySelector('.dots');
 let dot_li = dot.querySelectorAll('li');
@@ -178,11 +178,11 @@ next.addEventListener('click', function () {
 }
 )
 ```
-{% endraw %}
+
 # react18实现
 ### 1. 样式文件
 这个和js实现的方法差不多
-{% raw %}
+
 ```css
 *{
     padding: 0;
@@ -247,10 +247,10 @@ next.addEventListener('click', function () {
     left: 0;
 }
 ```
-{% endraw %}
+
 ### 2. jsx代码段
 react很方便的利用useEffect,useState两个hook实现当前选中的图片索引的跟踪
-{% raw %}
+
 ```javascript
 import React, { useEffect,useState } from 'react'
 import { getImageurl } from "../../../../utils"
@@ -310,4 +310,4 @@ export default function Viewproject() {
 }
 
 ```
-{% endraw %}
+
