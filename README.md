@@ -10,3 +10,6 @@ https://www.iconfont.cn/
 
 ◽hover
 https://varin6.github.io/Hover-Buttons/
+
+◽emoji
+https://www.emojiall.com/zh-hans/all-cate
