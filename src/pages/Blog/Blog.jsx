@@ -144,7 +144,9 @@ const Blog = () => {
           
         >
           <div className="demo-logo-vertical" style={{ margin: '80px 0 50px 35px' }} >
-            <img src={getImageurl("hero/avatar.png")} alt="avatar" style={{ height: '250px' ,display:collapsed ? 'none' : 'block'}} />
+            <Link to='/'>
+              <img src={getImageurl("hero/avatar.png")} alt="avatar" style={{ height: '250px' ,display:collapsed ? 'none' : 'block'}} />
+            </Link>
           </div>
           <Menu
             defaultSelectedKeys={['1']}
