@@ -11,7 +11,7 @@ export const Hero = () => {
             idx = 1
         }  
         setTextEl(text.slice(0, idx))         
-        setTimeout(writeText, 400)
+        setTimeout(writeText, 200)
     }
     
     useEffect(()=>{

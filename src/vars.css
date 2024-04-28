@@ -1,17 +1,24 @@
 :root {
-    /* Colours */
-    --color-text: #000;
-    --color-primary: #5bbaf6;
-    --color-secondary: rgba(188, 188, 188, 0.258);
-    --color-dark: #b2e2f7d9;
-    --color-bg: #fff;
-  
-    /* Fonts */
-    --font-roboto: "Roboto";
+  /* Colours */
+  --color-text: #000;
+  --color-primary: #5bbaf6;
+  --color-secondary: rgba(188, 188, 188, 0.258);
+  --color-dark: #b2e2f7d9;
+  --color-bg: #fff;
 
-    /* contact size */
-    --font-size-small: 25px;
-    --font-size-medium: 40px;
-    --font-size-large: 60px;
-  }
-  
+  /* Fonts */
+  --font-roboto: "Roboto";
+
+  /* contact size */
+  --font-size-small: 25px;
+  --font-size-medium: 40px;
+  --font-size-large: 60px;
+
+  --left-bg-color: rgba(75, 142, 173, 0.637);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --left-btn-hover-color: rgb(40, 162, 211);
+  --right-btn-hover-color: rgb(0, 0, 0);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
