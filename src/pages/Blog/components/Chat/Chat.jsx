@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './Chat.module.css'
 import { Button, message, Input  } from 'antd';
 export default function Chat() {
     const API_KEY = "sk-BROyL7XYdSKN1bZd78A17cB8A7B04c35B989BeC4934863Fe";
     const ENDPOINT = "https://free.gpt.ge/v1/chat/completions";
-    const ref=React.createRef();
-    const [children, setChildren] = React.useState([]);
+    const [inputValue, setInputValue] = React.useState('');
     // 历史消息
     const messages = [];
+    // 聊天框
     const chatBoxRef=React.createRef();
     // 等待
     let waiting = false;
-
+    // 发送消息到ChatGPT
     const [messageApi, contextHolder] = message.useMessage();
     const success = () => {
         messageApi.open({
@@ -46,7 +46,8 @@ export default function Chat() {
         }
         waiting = true;
         // 获取到用户的输入
-        const message = ref.current.input.value.trim();
+        const message = inputValue.trim();
+        setInputValue('');
         // 判断用户输入是否为空
         if (message === '') {
             warning_input();
@@ -56,7 +57,7 @@ export default function Chat() {
         // 将用户输入显示在聊天框中
         displayUserMessage(message);
         success();
-        ref.current.input.value = '';
+        
         // 创建ChatGPT的回复，并获取到显示回复的容器
         const htmlSpanElement = displayChatGPTMessageAndGetContainer();
         // 发送消息到ChatGPT
@@ -130,11 +131,6 @@ export default function Chat() {
      * @param text 用户的输入
      */
     function displayUserMessage(text) {
-        
-        // const cutDiv = <div style={{textAlign: "right"}}><span className={styles.sender}>You </span><span className={styles.youDatatime}>{getDateTime()}</span> </div>;
-        // const senderSpan = `<span className=${styles.sender}>You </span>`;
-        // const timeSpan = `<span className=${styles.youDatatime}>${getDateTime()}</span>`;
-
         const messageDiv = document.createElement('div');
         messageDiv.classList.add(styles.message);
         
@@ -151,9 +147,6 @@ export default function Chat() {
         cutDiv.appendChild(timeSpan);
         cutDiv.appendChild(senderSpan);
 
-        // const cutDiv2 = <div style={{textAlign: "right",marginTop: "5px"}}><p className={styles.myself_chat}>{text}</p></div>
-        
-
         const cutDiv2 = document.createElement('div');
         cutDiv2.style.textAlign = 'right';
         const textSpan = document.createElement('p');
@@ -165,7 +158,7 @@ export default function Chat() {
         
         messageDiv.appendChild(cutDiv);
         messageDiv.appendChild(cutDiv2);
-        // setChildren(children.concat([<div className={styles.message}> {cutDiv} {cutDiv2}</div>]));
+
         chatBoxRef.current.appendChild(messageDiv);
         chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;///////////////////////////////////////////////////////悬而不决
     }
@@ -178,8 +171,6 @@ export default function Chat() {
     function displayChatGPTMessageAndGetContainer() {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add(styles.message);
-        
-        // const cutDiv = <div><span className={styles.sender}>ChatGPT </span><span className={styles.datetime}>{getDateTime()}</span> </div>;
 
         const cutDiv = document.createElement('div');
         const senderSpan = document.createElement('span');
@@ -192,12 +183,10 @@ export default function Chat() {
 
         cutDiv.appendChild(senderSpan);
         cutDiv.appendChild(timeSpan);
-        // const textSpan = <p className={styles.gpt_chat} id='gpt-text'></p>;
-        
+
         const textSpan = document.createElement('p');
         textSpan.classList.add(styles.gpt_chat);
-        // console.log("textSpan",textSpan)
-        // const cutDiv2 = <div style={{marginTop: "5px"}}>{textSpan}</div>
+
         const cutDiv2 = document.createElement('div');
 
         cutDiv2.appendChild(textSpan);
@@ -206,8 +195,6 @@ export default function Chat() {
         messageDiv.appendChild(cutDiv);
         messageDiv.appendChild(cutDiv2);
 
-        // setChildren(<div className={styles.message}> {cutDiv} {cutDiv2}</div>)
-        
         chatBoxRef.current.appendChild(messageDiv);
         chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
         return textSpan;
@@ -301,11 +288,9 @@ export default function Chat() {
     return (
         <div className={styles.chatContainer} id="chat-container">
             <div ref={chatBoxRef} className={styles.chatBox} id="chat-box">
-                {children}
             </div>
-            {/* onKeyDown={(event) => event.key === "Enter"? sendMessage() : null} */}
             <div className={styles.inputContainer}>
-                <Input type="text" ref={ref} className={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} />
+                <Input type="text" className={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
                 {contextHolder}
                 <Button className={styles.sendButton} onClick={sendMessage}>Send</Button>
             </div>
