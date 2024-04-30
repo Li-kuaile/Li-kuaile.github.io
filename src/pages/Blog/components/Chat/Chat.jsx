@@ -46,7 +46,7 @@ export default function Chat() {
         }
         waiting = true;
         // 获取到用户的输入
-        const message = ref.current.value.trim();
+        const message = ref.current.input.value.trim();
         // 判断用户输入是否为空
         if (message === '') {
             warning_input();
@@ -303,8 +303,9 @@ export default function Chat() {
             <div ref={chatBoxRef} className={styles.chatBox} id="chat-box">
                 {children}
             </div>
+            {/* onKeyDown={(event) => event.key === "Enter"? sendMessage() : null} */}
             <div className={styles.inputContainer}>
-                <Input type="text" ref={ref} className={styles.userInput} placeholder="Type a message..." onKeyDown={(event) => event.key === "Enter"? sendMessage() : null}/>
+                <Input type="text" ref={ref} classNames={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} />
                 {contextHolder}
                 <Button className={styles.sendButton} onClick={sendMessage}>Send</Button>
             </div>
