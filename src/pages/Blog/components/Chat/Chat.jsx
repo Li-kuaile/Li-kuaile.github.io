@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styles from './Chat.module.css'
-import { Button, message, Space } from 'antd';
+import { Button, message, Input  } from 'antd';
 export default function Chat() {
     const API_KEY = "sk-BROyL7XYdSKN1bZd78A17cB8A7B04c35B989BeC4934863Fe";
     const ENDPOINT = "https://free.gpt.ge/v1/chat/completions";
@@ -304,7 +304,7 @@ export default function Chat() {
                 {children}
             </div>
             <div className={styles.inputContainer}>
-                <input type="text" ref={ref} className={styles.userInput} placeholder="Type a message..." onKeyDown={(event) => event.key === "Enter"? sendMessage() : null}/>
+                <Input  type="text" ref={ref} className={styles.userInput} placeholder="Type a message..." onKeyDown={(event) => event.key === "Enter"? sendMessage() : null}/>
                 {/* <button className={styles.sendButton} onClick={sendMessage}>Send</button> */}
                 {contextHolder}
                 <Button className={styles.sendButton} onClick={sendMessage}>Send</Button>
