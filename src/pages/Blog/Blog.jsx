@@ -6,6 +6,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   RollbackOutlined,
+  MailOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, theme, ConfigProvider, Switch, Tooltip, Button,FloatButton } from 'antd';
 
@@ -18,6 +19,7 @@ import HTML from "./components/HTML/HTML"
 import React_page from "./components/React_page/React_page"
 import Viewproject from './components/Viewproject/Viewproject';
 
+import Chat from './components/Chat/Chat';
 import NotFound from "../NotFound/NotFound"
 import { useNavigate, Routes, Route, Link, Navigate ,useLocation} from 'react-router-dom'
 import CustomBreadcrumb from './CustomBreadcrumb';
@@ -75,6 +77,13 @@ const data = [
         }
       }
     ]
+  },
+  {
+    key: 'chatGPT',
+    path: '/blog/chatGPT',
+    meta: {
+      title: '聊天机器人',
+    },
   }
 ]
 const { Header, Content, Footer, Sider } = Layout;
@@ -96,9 +105,9 @@ const items = [
     getItem('JavaScript', '/blog/blogs/JavaScript'),
     getItem('React', '/blog/blogs/React'),
   ]),
-  // getItem('联系我', '3', <MailOutlined />),
+  getItem('chatGPT', '/blog/chatGPT', <MailOutlined />),
 ];
-const menu_items = ['/blog/home', '/blog/projects', '/blog/blogs', '/blog/blogs/HTML', '/blog/blogs/CSS', '/blog/blogs/JavaScript', '/blog/blogs/React']
+const menu_items = ['/blog/home', '/blog/projects', '/blog/blogs', '/blog/blogs/HTML', '/blog/blogs/CSS', '/blog/blogs/JavaScript', '/blog/blogs/React','/blog/chatGPT']
 
 
 const Blog = () => {
@@ -185,7 +194,7 @@ const Blog = () => {
               }}
             />
             <div style={{ fontSize: '16px'  }}>
-              <span>主题颜色</span>
+              <span>切换主题</span>
               <Tooltip placement="bottomRight" title='切换主题'>
                 <Switch defaultChecked={false} onChange={onChange} style={{ marginLeft: '10px'}} />
               </Tooltip>
@@ -218,7 +227,7 @@ const Blog = () => {
               <Route path="/blogs/JavaScript" element={<JavaScript />} />*/}
                 <Route path="/blogs/React" element={<React_page />} /> 
                 <Route path="/projects/:id" element={<Viewproject/> }/>
-
+                <Route path="/chatGPT" element={<Chat/>} />
                 <Route path="/*" element={<NotFound isdark={isdark} />} />
               </Routes>
             </div>
