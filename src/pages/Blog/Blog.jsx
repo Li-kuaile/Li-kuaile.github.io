@@ -6,7 +6,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   RollbackOutlined,
-  MailOutlined,
+  OpenAIOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, theme, ConfigProvider, Switch, Tooltip, Button,FloatButton } from 'antd';
 
@@ -105,7 +105,7 @@ const items = [
     getItem('JavaScript', '/blog/blogs/JavaScript'),
     getItem('React', '/blog/blogs/React'),
   ]),
-  getItem('chatGPT', '/blog/chatGPT', <MailOutlined />),
+  getItem('chatGPT', '/blog/chatGPT', <OpenAIOutlined />),
 ];
 const menu_items = ['/blog/home', '/blog/projects', '/blog/blogs', '/blog/blogs/HTML', '/blog/blogs/CSS', '/blog/blogs/JavaScript', '/blog/blogs/React','/blog/chatGPT']
 

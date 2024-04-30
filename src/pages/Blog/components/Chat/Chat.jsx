@@ -56,7 +56,7 @@ export default function Chat() {
         // 将用户输入显示在聊天框中
         displayUserMessage(message);
         success();
-        ref.current.value = '';
+        ref.current.input.value = '';
         // 创建ChatGPT的回复，并获取到显示回复的容器
         const htmlSpanElement = displayChatGPTMessageAndGetContainer();
         // 发送消息到ChatGPT
