@@ -305,7 +305,7 @@ export default function Chat() {
             </div>
             {/* onKeyDown={(event) => event.key === "Enter"? sendMessage() : null} */}
             <div className={styles.inputContainer}>
-                <Input type="text" ref={ref} classNames={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} />
+                <Input type="text" ref={ref} className={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} />
                 {contextHolder}
                 <Button className={styles.sendButton} onClick={sendMessage}>Send</Button>
             </div>
