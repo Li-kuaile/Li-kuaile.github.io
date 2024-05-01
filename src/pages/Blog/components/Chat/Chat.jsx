@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from './Chat.module.css'
-import { Button, message, Input  } from 'antd';
-export default function Chat() {
+import { Button, message  } from 'antd';
+export default function Chat(props) {
+    let {isdark}=props;
+
     const API_KEY = "sk-BROyL7XYdSKN1bZd78A17cB8A7B04c35B989BeC4934863Fe";
     const ENDPOINT = "https://free.gpt.ge/v1/chat/completions";
-    const [inputValue, setInputValue] = React.useState('');
+    // const [inputValue, setInputValue] = React.useState('');
     // 历史消息
     const messages = [];
     // 聊天框
@@ -13,6 +15,8 @@ export default function Chat() {
     let waiting = false;
     // 发送消息到ChatGPT
     const [messageApi, contextHolder] = message.useMessage();
+    // input框的ref
+    const inputref=React.createRef();
     const success = () => {
         messageApi.open({
         type: 'success',
@@ -46,8 +50,11 @@ export default function Chat() {
         }
         waiting = true;
         // 获取到用户的输入
-        const message = inputValue.trim();
-        setInputValue('');
+        // const message = inputValue.trim();
+        // setInputValue('');
+        const message = inputref.current.value.trim();
+        inputref.current.value = '';
+
         // 判断用户输入是否为空
         if (message === '') {
             warning_input();
@@ -290,7 +297,7 @@ export default function Chat() {
             <div ref={chatBoxRef} className={styles.chatBox} id="chat-box">
             </div>
             <div className={styles.inputContainer}>
-                <Input type="text" className={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                <input type="text" style={{color:isdark?'#fff':'#000'}} ref={inputref} className={styles.userInput} placeholder="Type a message..." onKeyDown={(e)=>{e.key==='Enter'?sendMessage():null}}/>
                 {contextHolder}
                 <Button className={styles.sendButton} onClick={sendMessage}>Send</Button>
             </div>

@@ -227,7 +227,7 @@ const Blog = () => {
               <Route path="/blogs/JavaScript" element={<JavaScript />} />*/}
                 <Route path="/blogs/React" element={<React_page />} /> 
                 <Route path="/projects/:id" element={<Viewproject/> }/>
-                <Route path="/chatGPT" element={<Chat/>} />
+                <Route path="/chatGPT" element={<Chat isdark={isdark} />} />
                 <Route path="/*" element={<NotFound isdark={isdark} />} />
               </Routes>
             </div>

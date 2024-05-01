@@ -34,11 +34,17 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     flex: 1;
+    background: transparent;
+}
+.user-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: #76b6fc98 0px 0px 1px 1px;
 }
 
 .send-button {
     font-size: 18px;
-    height: 42px;
+    height: 41px;
 }
 
 .message {
