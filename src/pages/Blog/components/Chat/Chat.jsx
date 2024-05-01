@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{ useEffect } from 'react'
 import styles from './Chat.module.css'
 import { Button, message, Input  } from 'antd';
 export default function Chat() {
@@ -9,6 +9,11 @@ export default function Chat() {
     const messages = [];
     // 聊天框
     const chatBoxRef=React.createRef();
+
+    const myInput = React.createRef();
+    useEffect(()=>{
+        myInput.current.focus()
+      },[])
     // 等待
     let waiting = false;
     // 发送消息到ChatGPT
@@ -290,7 +295,7 @@ export default function Chat() {
             <div ref={chatBoxRef} className={styles.chatBox} id="chat-box">
             </div>
             <div className={styles.inputContainer}>
-                <Input type="text" className={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                <Input type="text" ref={myInput} className={styles.userInput} placeholder="Type a message..."  onPressEnter={sendMessage} value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
                 {contextHolder}
                 <Button className={styles.sendButton} onClick={sendMessage}>Send</Button>
             </div>
