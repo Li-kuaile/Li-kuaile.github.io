@@ -11,8 +11,8 @@ export const Projects = () => {
                 {
                     projects.map((project, id) => {
                         return (
-                            <div key={id} className={styles.project}>
-                                <img src={getImageurl(project.imageSrc)} className={styles.image} alt="project img" />
+                            <div key={id} className={styles.project}  onClick={()=>{window.location.href=`/blog/projects/${id}`}}>
+                                <img src={project.imageSrc} className={styles.image} alt="project img" />
                                 <p className={styles.ptitle}>{project.title}</p>
                                 <p className={styles.pdescription}>{project.description}</p>
                                 <ul className={styles.skills}>
