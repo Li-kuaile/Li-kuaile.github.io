@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Projects.module.css'
 import { getImageurl } from "../../utils"
 import projects from "../../data/projects.json"
+import { Link } from "react-router-dom"
 
 export const Projects = () => {
     return (
@@ -11,9 +12,9 @@ export const Projects = () => {
                 {
                     projects.map((project, id) => {
                         return (
-                            <div key={id} className={styles.project}  onClick={()=>{window.location.href=`/blog/projects/${id}`}}>
+                            <div key={id} className={styles.project}>
                                 <img src={project.imageSrc} className={styles.image} alt="project img" />
-                                <p className={styles.ptitle}>{project.title}</p>
+                                <Link to={project.source} className={styles.ptitle}><p >{project.title}</p></Link>
                                 <p className={styles.pdescription}>{project.description}</p>
                                 <ul className={styles.skills}>
                                     {project.skills.map((skill, index) => {

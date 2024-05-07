@@ -7,7 +7,7 @@
     "url": "/profile.md",
     "skills": ["React", "JavaScript", "HTML", "CSS","React-Router-Dom","JSON","Markdown","antd-design"],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "/blog/projects/1"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "url": "/carousel.md",
     "skills": ["React", "JavaScript", "HTML", "CSS"],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "/blog/projects/2"
   },
   {
     "id": 3,
@@ -27,6 +27,6 @@
     "description": "待办清单组件，react或js实现",
     "skills": ["React", "JavaScript", "HTML", "CSS"],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "/blog/projects/3"
   }
 ]

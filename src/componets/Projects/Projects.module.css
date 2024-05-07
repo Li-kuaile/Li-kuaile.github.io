@@ -50,6 +50,11 @@
 .ptitle{
     font-size: 30px;
     font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+.ptitle:hover{
+    color: var(--color-primary);
 }
 .description{
     margin-top: 6px;
