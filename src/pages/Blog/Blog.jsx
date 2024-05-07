@@ -8,7 +8,7 @@ import {
   RollbackOutlined,
   OpenAIOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, theme, ConfigProvider, Switch, Tooltip, Button,FloatButton } from 'antd';
+import { Layout, Menu, theme, ConfigProvider, Switch, Tooltip, Button, FloatButton } from 'antd';
 
 import { getImageurl } from "../../utils"
 import Projects from "./components/Projects/Projects"
@@ -21,7 +21,7 @@ import Viewproject from './components/Viewproject/Viewproject';
 
 import Chat from './components/Chat/Chat';
 import NotFound from "../NotFound/NotFound"
-import { useNavigate, Routes, Route, Link, Navigate ,useLocation} from 'react-router-dom'
+import { useNavigate, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
 import CustomBreadcrumb from './CustomBreadcrumb';
 
 import projects from '../../data/projects.json'
@@ -107,7 +107,7 @@ const items = [
   ]),
   getItem('chatGPT', '/blog/chatGPT', <OpenAIOutlined />),
 ];
-const menu_items = ['/blog/home', '/blog/projects', '/blog/blogs', '/blog/blogs/HTML', '/blog/blogs/CSS', '/blog/blogs/JavaScript', '/blog/blogs/React','/blog/chatGPT']
+const menu_items = ['/blog/home', '/blog/projects', '/blog/blogs', '/blog/blogs/HTML', '/blog/blogs/CSS', '/blog/blogs/JavaScript', '/blog/blogs/React', '/blog/chatGPT']
 
 
 const Blog = () => {
@@ -149,12 +149,11 @@ const Blog = () => {
           collapsed={collapsed}
           trigger={null}
           collapsible
-          style={{position:'relative'}}
-          
+          style={{ position: 'relative' }}
         >
-          <div className="demo-logo-vertical" style={{ margin: '80px 0 50px 35px' }} >
+          <div className="demo-logo-vertical" style={{ padding: '80px 0 50px 35px' }} >
             <Link to='/'>
-              <img src={getImageurl("hero/avatar.png")} alt="avatar" style={{ height: '250px' ,display:collapsed ? 'none' : 'block'}} />
+              <img src={getImageurl("hero/avatar.png")} alt="avatar" style={{ height: '250px', display: collapsed ? 'none' : 'block' }} />
             </Link>
           </div>
           <Menu
@@ -167,11 +166,15 @@ const Blog = () => {
             onClick={onClick}
             selectedKeys={menu_items.find(item => pathname.includes(item))}
           />
-          <Button type="link" href='/resume' style={{position: 'absolute', bottom: 10, left: 0, fontSize: '16px',fontWeight: 'bold'}}>{collapsed?
-          <Tooltip placement="topLeft" title="跳转到个人简历页">
-            <RollbackOutlined />
-          </Tooltip>
-          :'跳转到个人简历页'}</Button>
+          <div style={{ height: '50px' }}></div>
+          <Button type="link" href='/resume' style={{ position: 'absolute', bottom: '0', display: 'block', fontSize: '16px', fontWeight: 'bold' }}>
+            {collapsed ?
+              <Tooltip placement="topLeft" title="跳转到个人简历页">
+                <RollbackOutlined />
+              </Tooltip>
+              : '跳转到个人简历页'}
+          </Button>
+
         </Sider>
         <Layout >
           <Header
@@ -193,10 +196,10 @@ const Blog = () => {
                 height: 64,
               }}
             />
-            <div style={{ fontSize: '16px'  }}>
+            <div style={{ fontSize: '16px' }}>
               <span>切换主题</span>
               <Tooltip placement="bottomRight" title='切换主题'>
-                <Switch defaultChecked={false} onChange={onChange} style={{ marginLeft: '10px'}} />
+                <Switch defaultChecked={false} onChange={onChange} style={{ marginLeft: '10px' }} />
               </Tooltip>
             </div>
 
@@ -225,8 +228,8 @@ const Blog = () => {
                 <Route path="/blogs/HTML" element={<HTML />} />
                 {/* <Route path="/blogs/CSS" element={<CSS />} />
               <Route path="/blogs/JavaScript" element={<JavaScript />} />*/}
-                <Route path="/blogs/React" element={<React_page />} /> 
-                <Route path="/projects/:id" element={<Viewproject/> }/>
+                <Route path="/blogs/React" element={<React_page />} />
+                <Route path="/projects/:id" element={<Viewproject />} />
                 <Route path="/chatGPT" element={<Chat isdark={isdark} />} />
                 <Route path="/*" element={<NotFound isdark={isdark} />} />
               </Routes>
@@ -235,13 +238,13 @@ const Blog = () => {
           <Footer style={{ textAlign: 'center' }}>
             Ant Design ©{new Date().getFullYear()} Created by 李快乐
           </Footer>
-          
+
         </Layout>
-        
+
       </Layout>
       <FloatButton.BackTop />
     </ConfigProvider>
-    
+
   );
 
 };
