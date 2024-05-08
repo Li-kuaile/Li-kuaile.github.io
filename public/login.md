@@ -1,9 +1,9 @@
 ﻿先看看效果图
-![在这里插入图片描述](/assets/login/login1.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/Li-kuaile/Li-kuaile.github.io/main/assets/login/login1.png)
 
 和一般的登陆页面不同的是，label添加了跳动效果
 
-![在这里插入图片描述](/assets/login/login2.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/Li-kuaile/Li-kuaile.github.io/main/assets/login/login2.png)
 
 
 > 参考github上demo系列
