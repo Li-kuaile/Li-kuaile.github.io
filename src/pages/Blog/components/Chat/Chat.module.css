@@ -5,9 +5,9 @@
 } */
 .chat-container {
     margin: 20px auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* padding: 10px; */
     height: calc(100vh - 300px);
     display: flex;
     flex-direction: column;
@@ -16,6 +16,7 @@
 .chat-box {
     overflow-y: auto;
     border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 20px;
     flex: 1;
 }
