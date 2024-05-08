@@ -1,13 +1,7 @@
 import React from 'react'
 import { Carousel, Descriptions } from 'antd'
+import styles from './Home.module.css'
 
-const contentStyle = {
-    height: '200px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-};
 const items = [
     {
         key: '1',
@@ -45,21 +39,27 @@ const items = [
         children: '研二在读',
     }
 ];
-export default function Home() {
+export default function Home(props) {
     return (
         <>
-            <Carousel autoplay>
+            <Carousel autoplay autoplaySpeed={1000} fade className={styles.gradientBorder}>
                 <div>
-                    <h3 style={contentStyle}>1</h3>
+                    <h3 >耐心负责😆</h3>
                 </div>
                 <div>
-                    <h3 style={contentStyle}>2</h3>
+                    <h3 >专注🧐</h3>
                 </div>
                 <div>
-                    <h3 style={contentStyle}>3</h3>
+                    <h3 >诚信忠诚😁</h3>
                 </div>
                 <div>
-                    <h3 style={contentStyle}>4</h3>
+                    <h3 >理性严谨✊</h3>
+                </div>
+                <div>
+                    <h3 >谦虚😇</h3>
+                </div>
+                <div>
+                    <h3 >ISTJ🤠</h3>
                 </div>
             </Carousel>
             <Descriptions title="My Info" items={items} style={{ marginTop: 30 }}/>

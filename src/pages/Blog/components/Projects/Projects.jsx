@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 import ReactMarkdown from 'react-markdown'
 // const { Meta } = Card;
 // 改变页码的回调 page代表页码数 pageSize代表每页条数
-const defaultPageSize = 12;
+const defaultPageSize = 8;
 
 const tagColor = {
     "React": "cyan",
@@ -34,7 +34,7 @@ const tagColor = {
 export default function Projects() {
   const [data, setData] = useState(projects.slice(0, defaultPageSize))
   const handlePageChange = (e) => {
-    setData(projects.slice((e - 1) * 12, e * 12))
+    setData(projects.slice((e - 1) * defaultPageSize, e * defaultPageSize))
   }
 
 
@@ -85,7 +85,7 @@ export default function Projects() {
         showSizeChanger
         showQuickJumper
         defaultPageSize={defaultPageSize}
-        pageSizeOptions={['12', '24', '48']}
+        pageSizeOptions={['8', '16', '24']}
         showTotal={(total) => `Total ${total} items`}
         onChange={page => handlePageChange(page)}
         style={{

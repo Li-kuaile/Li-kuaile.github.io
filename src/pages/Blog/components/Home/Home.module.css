@@ -1,0 +1,33 @@
+.gradient-border {
+    outline: none;
+    
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: solid 6px #41403E;
+    transition: all .5s ease;
+    margin-bottom: 40px;
+
+    &:hover {
+        box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
+    }
+}
+.gradient-border h3{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: #fff;
+    font-size: 38px;
+    letter-spacing: 7px;
+    text-shadow: 1px 1px 8px skyblue;
+    background-color: transparent;
+}
+/* 重写antd里dots样式 */
+:global .ant-carousel .slick-dots li.slick-active button {
+    background: #000;
+    opacity: 0.8;
+}
+:global .ant-carousel .slick-dots li button{
+    background: #000;
+    opacity: 0.2;
+}
+  
