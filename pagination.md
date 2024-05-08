@@ -1,7 +1,7 @@
 ﻿# 组件介绍
 用了两种方式实现，注释详细~
 可能代码写的不够简洁，见谅🙁
-![在这里插入图片描述](/assets/page/page1.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/Li-kuaile/Li-kuaile.github.io/main/assets/page/page1.png)
 
 **1. 包含内容显示的分页器**
 网上看了很多实现，很多只有分页器部分，没和内容显示联动。
@@ -9,11 +9,11 @@
 
 **2. 切换每页显示数目**
 列举了三种，5，10，20条每页
-![在这里插入图片描述](/assets/page/page2.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/Li-kuaile/Li-kuaile.github.io/main/assets/page/page2.png)
 
 **3. 输入值后通过enter跳转**
 做了一个范围保护，如果超出当前范围，会自动变成最大或最小的页码。（做提示也可以，但我不想点提示的确认）
-![在这里插入图片描述](/assets/page/page3.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/Li-kuaile/Li-kuaile.github.io/main/assets/page/page3.png)
 
 
 # 原生JS实现
@@ -356,7 +356,7 @@ jump.addEventListener('keydown', function (event) {
 
 # React实现
 还是react方便。。。。😟
-![在这里插入图片描述](/assets/page/page4.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/Li-kuaile/Li-kuaile.github.io/main/assets/page/page4.png)
 
 ## 1.jsx
 ```javascript
