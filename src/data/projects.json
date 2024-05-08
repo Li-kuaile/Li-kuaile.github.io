@@ -28,5 +28,15 @@
     "skills": ["React", "JavaScript", "HTML", "CSS"],
     "demo": "https://www.example.com",
     "source": "/blog/projects/3"
+  },
+  {
+    "id": 4,
+    "title": "Pagination",
+    "imageSrc": "/pagination.png",
+    "url": "/pagination.md",
+    "description": "分页器组件，react或js实现",
+    "skills": ["React", "JavaScript", "HTML", "CSS"],
+    "demo": "https://www.example.com",
+    "source": "/blog/projects/4"
   }
 ]

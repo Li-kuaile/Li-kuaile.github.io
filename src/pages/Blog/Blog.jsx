@@ -151,9 +151,9 @@ const Blog = () => {
           collapsible
           style={{ position: 'relative' }}
         >
-          <div className="demo-logo-vertical" style={{ margin: '80px 35px 50px' }} >
+          <div className="demo-logo-vertical" style={{ margin: '50px 35px 15px' }} >
             <Link to='/'>
-              <img src={getImageurl("hero/avatar.png")} alt="avatar" style={{ height: '250px', display: collapsed ? 'none' : 'block' }} />
+              <img src={getImageurl("hero/avatar.png")} alt="avatar" style={{ height: '220px', display: collapsed ? 'none' : 'block' }} />
             </Link>
           </div>
           <Menu
@@ -229,7 +229,7 @@ const Blog = () => {
                 {/* <Route path="/blogs/CSS" element={<CSS />} />
               <Route path="/blogs/JavaScript" element={<JavaScript />} />*/}
                 <Route path="/blogs/React" element={<React_page />} />
-                <Route path="/projects/:id" element={<Viewproject />} />
+                <Route path="/projects/:id" element={<Viewproject isdark={isdark} />} />
                 <Route path="/chatGPT" element={<Chat isdark={isdark} />} />
                 <Route path="/*" element={<NotFound isdark={isdark} />} />
               </Routes>

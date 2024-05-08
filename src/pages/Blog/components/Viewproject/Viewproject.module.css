@@ -203,3 +203,10 @@ button:active {
     cursor: not-allowed;
     opacity: 0.6;
 } */
+.bg{
+    background-color: #000;
+    color: #fff;
+}
+.bg pre{
+    background-color: rgb(40, 44, 52) !important;
+}

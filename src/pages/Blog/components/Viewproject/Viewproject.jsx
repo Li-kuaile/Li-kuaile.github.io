@@ -1,16 +1,16 @@
 import React, { useEffect,useState } from 'react'
 import { useParams } from'react-router-dom'
 import projects from '../../../../data/projects.json';
-import { getImageurl } from "../../../../utils"
 import ReactMarkdown from 'react-markdown'
 import 'github-markdown-css';
 import rehypeHighlight from "rehype-highlight";
-import MarkNav from 'markdown-navbar'
+// import MarkNav from 'markdown-navbar'
 import 'markdown-navbar/dist/navbar.css';
 import "highlight.js/styles/atom-one-dark.css";
 import styles from './Viewproject.module.css'
 import { Button } from 'antd';
 import { DoubleLeftOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 // let carouselimg=[
 //     '1.jpg',
@@ -20,8 +20,9 @@ import { DoubleLeftOutlined } from '@ant-design/icons';
 //     '5.jpg'
 // ]
 
-export default function Viewproject() {
+export default function Viewproject(props) {
   let { id } = useParams();
+  let {isdark}=props;
   let project = projects.find(project => project.id == id);
 
 //   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -62,12 +63,14 @@ export default function Viewproject() {
     
   return (
     <div style={{padding: '20px'}}>
-        <Button type="primary" icon={<DoubleLeftOutlined />} style={{width: '100px',  marginBottom: '20px'}} onClick={()=>window.history.back()}>
+        <Link to='/blog/projects'>
+        <Button type="primary" icon={<DoubleLeftOutlined />} style={{width: '100px',  marginBottom: '20px'}}>
         Back
         </Button>
+        </Link>
         <header style={{fontSize: '32px', fontWeight: 'bold',marginBottom: '20px'}}>{project.title}</header>
-        <div>
-            <ReactMarkdown style={{flex:1}} children={mdContent} className="markdown-body" rehypePlugins={[rehypeHighlight]}></ReactMarkdown>
+        <div style={{background:'transparent'}}>
+            <ReactMarkdown children={mdContent} className={`markdown-body ${isdark?styles.bg:''}`} style={{flex:1}} rehypePlugins={[rehypeHighlight]}></ReactMarkdown>
             
             {/* <div className={styles.carousel}>
                 <div className={styles.carouselItems} style={{transform: `translateX(${-activeIndex*100}%)`}}>
