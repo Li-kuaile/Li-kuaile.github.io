@@ -151,7 +151,7 @@ const Blog = () => {
           collapsible
           style={{ position: 'relative' }}
         >
-          <div className="demo-logo-vertical" style={{ margin: '50px 35px 15px' }} >
+          <div className="demo-logo-vertical" style={{ margin: '50px 50px 15px' }} >
             <Link to='/'>
               <img src={getImageurl("hero/avatar.png")} alt="avatar" style={{ height: '220px', display: collapsed ? 'none' : 'block' }} />
             </Link>
