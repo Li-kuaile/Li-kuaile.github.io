@@ -32,6 +32,10 @@
     {
       "title": "Git",
       "imageSrc": "skills/git.png"
+    },
+    {
+      "title": "Antd",
+      "imageSrc": "skills/antd.png"
     }
   ],
   "languageSkills":[

@@ -16,6 +16,7 @@
     "@fontsource/outfit": "^5.0.12",
     "@fontsource/roboto": "^5.0.12",
     "antd": "^5.16.2",
+    "axios": "^1.6.8",
     "github-markdown-css": "^5.5.1",
     "highlight.js": "^11.9.0",
     "markdown-navbar": "^1.4.3",
