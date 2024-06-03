@@ -8,6 +8,10 @@ export const Learn = () => {
     return (
         <section className={styles.container} id='blog'>
             <h2 className={styles.title}>学习路线</h2>
+            <div className={styles.xmind}>
+                {/* <h3 className={`${styles.title} ${styles.title3}`}>学习路线xmind</h3> */}
+                <iframe src="https://li-kuaile.github.io/RMind/" frameborder="1" title="学习路线" ></iframe>
+            </div>
             <div className={styles.content}>
                 {
                     learn.map((item, index) => (
@@ -26,6 +30,7 @@ export const Learn = () => {
                     ))
                 }
             </div>
+
         </section>
     )
 }
